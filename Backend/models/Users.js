@@ -6,4 +6,6 @@ const userschema=new Schema({
     password:{type:String,required:true},
     date:{type:Date,default:Date.now}
 })
-module.exports=mongoose.model('user',userschema)
+const User=mongoose.model('user',userschema)
+// User.createIndexes();//iska use nhi pata 
+module.exports=User;

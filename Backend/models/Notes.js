@@ -1,8 +1,10 @@
 const mongoose =require("mongoose");
+const {Schema}=mongoose;
 const notesschema=new Schema({
-    title:{type:string,required:true},
-    desc:{type:string,required:true},
-    tag:{type:string,tag:general},
+    user:{type:mongoose.Schema.Types.ObjectId,ref:'user'},
+    title:{type:String,required:true},
+    desc:{type:String,required:true},
+    tag:{type:String,tag:"general"},
     date:{type:Date,default:Date.now}
 })
-module.exports=momgoose.model('notes',notesschema)
+module.exports=mongoose.model('notes',notesschema)
